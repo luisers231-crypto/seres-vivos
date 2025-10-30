@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reinos de la Naturaleza - WebApp Futurista</title>
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            background-color: #0a0a0a;
+            color: #00ff00;
+            margin: 0;
+            padding: 20px;
+        }
+        header {
+            text-align: center;
+            background-color: #000;
+            color: #00ffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px #00ffff;
+        }
+        nav {
+            text-align: center;
+            margin: 20px 0;
+        }
+        nav a {
+            margin: 10px;
+            text-decoration: none;
+            color: #ff00ff;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #00ffff;
+            text-shadow: 0 0 10px #00ffff;
+        }
+        section {
+            margin: 20px 0;
+            padding: 20px;
+            background-color: #1a1a1a;
+            border-radius: 10px;
+            box-shadow: 0 0 15px #00ff00;
+        }
+        h2 {
+            color: #ff00ff;
+            text-shadow: 0 0 10px #ff00ff;
+        }
+        .fun-fact {
+            background-color: #333;
+            padding: 10px;
+            border-left: 5px solid #00ffff;
+            margin: 10px 0;
+            animation: glow 2s infinite alternate;
+        }
+        @keyframes glow {
+            from { box-shadow: 0 0 5px #00ffff; }
+            to { box-shadow: 0 0 20px #00ffff; }
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 15px #ff00ff;
+            transition: transform 0.3s;
+        }
+        img:hover {
+            transform: scale(1.05);
+        }
+        .hidden-content {
+            display: none;
+            background-color: #222;
+            padding: 10px;
+            border-radius: 5px;
+            animation: fadeIn 1s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        button {
+            background-color: #ff00ff;
+            color: #000;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #00ffff;
+            box-shadow: 0 0 10px #00ffff;
+        }
+        #quiz {
+            margin-top: 40px;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        #timer {
+            font-size: 24px;
+            color: #ff0000;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+            color: #00ffff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Reinos de la Naturaleza - Edición Futurista</h1>
+        <p>Explora los reinos biológicos en un mundo cyberpunk con interacciones novedosas y quizzes cronometrados.</p>
+    </header>
+
+    <nav>
+        <a href="#monera">Monera</a>
+        <a href="#protista">Protista</a>
+        <a href="#fungi">Fungi</a>
+        <a href="#plantae">Plantae</a>
+        <a href="#animalia">Animalia</a>
+        <a href="#quiz">Quiz Interactivo</a>
+    </nav>
+
+    <section id="monera">
+        <h2>Reino Monera - El Código Fuente de la Vida</h2>
+        <img src="https://thumbs.dreamstime.com/b/bacteria-10737701.jpg" alt="Ilustración futurista del Reino Monera">
+        <p>Organismos procariotas, unicelulares, sin núcleo definido. Incluye bacterias y arqueas. En el futuro, se usan en bioingeniería para crear nanomáquinas vivientes.</p>
+        <div class="fun-fact">¡Dato lúdico futurista! Las bacterias podrían ser programadas como IA biológica para curar enfermedades en tiempo real, como drones microscópicos en tu sangre.</div>
+        <button onclick="toggleContent('monera-hidden')">Explorar Futuro Novelesco</button>
+        <div id="monera-hidden" class="hidden-content">
+            <p>Novedad: En 2040, bacterias editadas con CRISPR podrían terraformar Marte, produciendo oxígeno en atmósferas hostiles. ¡Haz clic en la imagen para "activar" una simulación mental!</p>
+        </div>
+    </section>
+
+    <section id="protista">
+        <h2>Reino Protista - Los Hackers Unicelulares</h2>
+        <img src="https://thumbs.dreamstime.com/b/structure-euglena-anatomy-freshwater-protozoan-composed-chlorophyll-has-rudimentary-eye-vector-diagram-34424805.jpg" alt="Ilustración futurista del Reino Protista">
+        <p>Organismos eucariotas, mayormente unicelulares y diversos. Incluye algas y protozoos. En visiones futuristas, podrían integrarse en ciborgs para fotosíntesis humana.</p>
+        <div class="fun-fact">¡Dato lúdico futurista! Imagina protozoos como sensores vivos en tu piel, detectando contaminantes y cambiando color como un tatuaje inteligente.</div>
+        <button onclick="toggleContent('protista-hidden')">Explorar Futuro Novelesco</button>
+        <div id="protista-hidden" class="hidden-content">
+            <p>Novedad: Protistas modificados podrían usarse en nanobots para limpiar océanos, absorbiendo plásticos a nivel molecular. ¡Interactúa: Presiona para "liberar" un protozoo virtual!</p>
+        </div>
+    </section>
+
+    <section id="fungi">
+        <h2>Reino Fungi - Las Redes Neurales Orgánicas</h2>
+        <img src="https://i0.wp.com/beforewegoblog.com/wp-content/uploads/2024/02/Fungi-In-Fiction-BANNER-NO-TEXT-scaled.jpg?fit=1024%2C666&ssl=1" alt="Ilustración futurista del Reino Fungi">
+        <p>Organismos eucariotas, heterótrofos que absorben nutrientes. Incluye hongos y levaduras. Futuro: Micelios como cables biológicos para computadoras cuánticas.</p>
+        <div class="fun-fact">¡Dato lúdico futurista! Hongos podrían conectar ciudades enteras en una "internet micológica", transmitiendo datos a velocidades lumínicas a través de raíces.</div>
+        <button onclick="toggleContent('fungi-hidden')">Explorar Futuro Novelesco</button>
+        <div id="fungi-hidden" class="hidden-content">
+            <p>Novedad: En escenarios sci-fi, fungi bioimpresos curan heridas instantáneamente, tejiendo tejidos como impresoras 3D vivas. ¡Clic para "conectar" a la red fungal!</p>
+        </div>
+    </section>
+
+    <section id="plantae">
+        <h2>Reino Plantae - Los Generadores de Energía Verde</h2>
+        <img src="https://www.careerpower.in/blog/wp-content/uploads/sites/2/2023/08/28155111/Kingdom-Plantae-2.png" alt="Ilustración futurista del Reino Plantae">
+        <p>Organismos eucariotas, multicelulares, autótrofos con fotosíntesis. Futuro: Plantas híbridas con paneles solares integrados para ciudades autosuficientes.</p>
+        <div class="fun-fact">¡Dato lúdico futurista! Plantas carnívoras evolucionadas podrían ser guardianes robóticos, capturando drones intrusos con enredaderas electrificadas.</div>
+        <button onclick="toggleContent('plantae-hidden')">Explorar Futuro Novelesco</button>
+        <div id="plantae-hidden" class="hidden-content">
+            <p>Novedad: En 2050, plantas genéticamente mejoradas podrían producir electricidad directamente, alimentando hogares con "árboles-batería". ¡Interactúa para "cosechar" energía virtual!</p>
+        </div>
+    </section>
+
+    <section id="animalia">
+        <h2>Reino Animalia - Los Ciborgs Evolucionados</h2>
+        <img src="https://t4.ftcdn.net/jpg/06/04/40/99/360_F_604409960_1pwkiU9YVeYCylxCzeFFoYIndvxL3JwT.jpg" alt="Ilustración futurista del Reino Animalia">
+        <p>Organismos eucariotas, multicelulares, heterótrofos y móviles. Futuro: Animales aumentados con implantes neurales para comunicación humano-animal.</p>
+        <div class="fun-fact">¡Dato lúdico futurista! Pulpos con IA integrada podrían resolver puzzles complejos, actuando como asistentes personales en océanos inteligentes.</div>
+        <button onclick="toggleContent('animalia-hidden')">Explorar Futuro Novelesco</button>
+        <div id="animalia-hidden" class="hidden-content">
+            <p>Novedad: En mundos posthumanos, animales como delfines con exoesqueletos podrían explorar espacio profundo. ¡Clic para "fusionar" con un animal ciborg!</p>
+        </div>
+    </section>
+
+    <section id="quiz">
+        <h2>Quiz Interactivo Futurista</h2>
+        <p>¡Prueba tus conocimientos con 20 preguntas! Tienes 10 minutos. Presiona "Iniciar Quiz" para comenzar el cronómetro.</p>
+        <button id="startQuiz">Iniciar Quiz</button>
+        <div id="timer">Tiempo restante: 10:00</div>
+        <form id="quizForm" style="display: none;">
+            <!-- Preguntas 1-4: Monera -->
+            <div class="question">
+                <p>1. ¿Cuál reino incluye organismos procariotas como bacterias?</p>
+                <label><input type="radio" name="q1" value="a"> Monera</label><br>
+                <label><input type="radio" name="q1" value="b"> Plantae</label><br>
+                <label><input type="radio" name="q1" value="c"> Animalia</label>
+            </div>
+            <div class="question">
+                <p>2. ¿Las bacterias tienen núcleo definido?</p>
+                <label><input type="radio" name="q2" value="a"> Sí</label><br>
+                <label><input type="radio" name="q2" value="b"> No</label><br>
+                <label><input type="radio" name="q2" value="c"> Solo algunas</label>
+            </div>
+            <div class="question">
+                <p>3. ¿Qué tipo de organismos son las arqueas?</p>
+                <label><input type="radio" name="q3" value="a"> Eucariotas</label><br>
+                <label><input type="radio" name="q3" value="b"> Procariotas</label><br>
+                <label><input type="radio" name="q3" value="c"> Multicelulares</label>
+            </div>
+            <div class="question">
+                <p>4. ¿Dónde se encuentran comúnmente las bacterias?</p>
+                <label><input type="radio" name="q4" value="a"> Solo en agua</label><br>
+                <label><input type="radio" name="q4" value="b"> En todos lados</label><br>
+                <label><input type="radio" name="q4" value="c"> Solo en suelo</label>
+            </div>
+            <!-- Preguntas 5-8: Protista -->
+            <div class="question">
+                <p>5. ¿El reino Protista incluye mayormente organismos...?</p>
+                <label><input type="radio" name="q5" value="a"> Multicelulares</label><br>
+                <label><input type="radio" name="q5" value="b"> Unicelulares</label><br>
+                <label><input type="radio" name="q5" value="c"> Sin células</label>
+            </div>
+            <div class="question">
+                <p>6. ¿Qué incluyen los protistas?</p>
+                <label><input type="radio" name="q6" value="a"> Algas y protozoos</label><br>
+                <label><input type="radio" name="q6" value="b"> Hongos y plantas</label><br>
+                <label><input type="radio" name="q6" value="c"> Animales y bacterias</label>
+            </div>
+            <div class="question">
+                <p>7. ¿Los protistas son eucariotas?</p>
+                <label><input type="radio" name="q7" value="a"> Sí</label><br>
+                <label><input type="radio" name="q7" value="b"> No</label><br>
+                <label><input type="radio" name="q7" value="c"> Depende</label>
+            </div>
+            <div class="question">
+                <p>8. ¿Dónde viven la mayoría de los protistas?</p>
+                <label><input type="radio" name="q8" value="a"> Ambientes acuáticos</label><br>
+                <label><input type="radio" name="q8" value="b"> Desiertos</label><br>
+                <label><input type="radio" name="q8" value="c"> Espacio</label>
+            </div>
+            <!-- Preguntas 9-12: Fungi -->
+            <div class="question">
+                <p>9. ¿Los fungi son autótrofos?</p>
+                <label><input type="radio" name="q9" value="a"> Sí</label><br>
+                <label><input type="radio" name="q9" value="b"> No, heterótrofos</label><br>
+                <label><input type="radio" name="q9" value="c"> Ambos</label>
+            </div>
+            <div class="question">
+                <p>10. ¿Qué descomponen los hongos?</p>
+                <label><input type="radio" name="q10" value="a"> Materia orgánica</label><br>
+                <label><input type="radio" name="q10" value="b"> Rocas</label><br>
+                <label><input type="radio" name="q10" value="c"> Metales</label>
+            </div>
+            <div class="question">
+                <p>11. ¿Incluye el reino Fungi levaduras?</p>
+                <label><input type="radio" name="q11" value="a"> Sí</label><br>
+                <label><input type="radio" name="q11" value="b"> No</label><br>
+                <label><input type="radio" name="q11" value="c"> Solo en agua</label>
+            </div>
+            <div class="question">
+                <p>12. ¿Los fungi tienen paredes celulares de quitina?</p>
+                <label><input type="radio" name="q12" value="a"> Sí</label><br>
+                <label><input type="radio" name="q12" value="b"> No, de celulosa</label><br>
+                <label><input type="radio" name="q12" value="c"> Sin paredes</label>
+            </div>
+            <!-- Preguntas 13-16: Plantae -->
+            <div class="question">
+                <p>13. ¿Qué proceso realizan las plantas?</p>
+                <label><input type="radio" name="q13" value="a"> Fotosíntesis</label><br>
+                <label><input type="radio" name="q13" value="b"> Respiración solo</label><br>
+                <label><input type="radio" name="q13" value="c"> Ninguno</label>
+            </div>
+            <div class="question">
+                <p>14. ¿Las plantas son multicelulares?</p>
+                <label><input type="radio" name="q14" value="a"> Sí</label><br>
+                <label><input type="radio" name="q14" value="b"> No</label><br>
+                <label><input type="radio" name="q14" value="c"> Algunas</label>
+            </div>
+            <div class="question">
+                <p>15. ¿Qué producen las plantas?</p>
+                <label><input type="radio" name="q15" value="a"> Oxígeno</label><br>
+                <label><input type="radio" name="q15" value="b"> Dióxido de carbono</label><br>
+                <label><input type="radio" name="q15" value="c"> Nitrógeno</label>
+            </div>
+            <div class="question">
+                <p>16. ¿Tienen paredes celulares de celulosa?</p>
+                <label><input type="radio" name="q16" value="a"> Sí</label><br>
+                <label><input type="radio" name="q16" value="b"> No</label><br>
+                <label><input type="radio" name="q16" value="c"> De quitina</label>
+            </div>
+            <!-- Preguntas 17-20: Animalia -->
+            <div class="question">
+                <p>17. ¿Los animales son heterótrofos?</p>
+                <label><input type="radio" name="q17" value="a"> Sí</label><br>
+                <label><input type="radio" name="q17" value="b"> No</label><br>
+                <label><input type="radio" name="q17" value="c"> Algunos</label>
+            </div>
+            <div class="question">
+                <p>18. ¿Tienen paredes celulares los animales?</p>
+                <label><input type="radio" name="q18" value="a"> Sí</label><br>
+                <label><input type="radio" name="q18" value="b"> No</label><br>
+                <label><input type="radio" name="q18" value="c"> De celulosa</label>
+            </div>
+            <div class="question">
+                <p>19. ¿Incluye el reino Animalia a los humanos?</p>
+                <label><input type="radio" name="q19" value="a"> Sí</label><br>
+                <label><input type="radio" name="q19" value="b"> No</label><br>
+                <label><input type="radio" name="q19" value="c"> Solo mamíferos</label>
+            </div>
+            <div class="question">
+                <p>20. ¿Son los animales móviles?</p>
+                <label><input type="radio" name="q20" value="a"> Mayormente sí</label><br>
+                <label><input type="radio" name="q20" value="b"> No</label><br>
+                <label><input type="radio" name="q20" value="c"> Solo en agua</label>
+            </div>
+            <button type="button" onclick="checkQuiz()">Enviar Quiz</button>
+        </form>
+        <div id="result"></div>
+    </section>
+
+    <script>
+        function toggleContent(id) {
+            const content = document.getElementById(id);
+            content.style.display = content.style.display === 'block' ? 'none' : 'block';
+        }
+
+        let timerInterval;
+        let timeLeft = 600; // 10 minutos en segundos
+
+        document.getElementById('startQuiz').addEventListener('click', function() {
+            this.style.display = 'none';
+            document.getElementById('quizForm').style.display = 'block';
+            startTimer();
+        });
+
+        function startTimer() {
+            updateTimerDisplay();
+            timerInterval = setInterval(() => {
+                timeLeft--;
+                updateTimerDisplay();
+                if (timeLeft <= 0) {
+                    clearInterval(timerInterval);
+                    checkQuiz();
+                }
+            }, 1000);
+        }
+
+        function updateTimerDisplay() {
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+            document.getElementById('timer').innerText = `Tiempo restante: ${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+        }
+
+        function checkQuiz() {
+            clearInterval(timerInterval);
+            const answers = {
+                q1: 'a', q2: 'b', q3: 'b', q4: 'b',
+                q5: 'b', q6: 'a', q7: 'a', q8: 'a',
+                q9: 'b', q10: 'a', q11: 'a', q12: 'a',
+                q13: 'a', q14: 'a', q15: 'a', q16: 'a',
+                q17: 'a', q18: 'b', q19: 'a', q20: 'a'
+            };
+            let score = 0;
+            const form = document.getElementById('quizForm');
+            for (let i = 1; i <= 20; i++) {
+                const selected = form.querySelector(`input[name="q${i}"]:checked`);
+                if (selected && selected.value === answers[`q${i}`]) {
+                    score++;
+                }
+            }
+            document.getElementById('result').innerText = `Tu puntuación: ${score}/20. ¡En un futuro, tu conocimiento podría salvar mundos!`;
+            form.style.display = 'none'; // Ocultar formulario después de enviar
+        }
+    </script>
+</body>
+</html>
